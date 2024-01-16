@@ -5,8 +5,8 @@ const fs = require("fs");
 const server = http.createServer((req, res) => {
   const template = fs.readFileSync("./index.html");
   res.statusCode = 200;
-  res.setHeader("Content-Type", "text/html");
-  res.end(template);
+  res.setHeader("Content-Type", "ejs");
+  res.end(demo);
 });
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
