@@ -6,6 +6,8 @@ const {
   updateData,
   getById,
   insertDataUser,
+  deleteById,
+  getByName,
 } = require("../controller/homeController");
 const sendGmail = require("../controller/sendEmail");
 const router = express.Router();
@@ -17,8 +19,8 @@ router.get("/join", join);
 router.post("/create", insertData);
 router.post("/update/:id", updateData);
 router.post("/users", insertDataUser);
-router.post("/send", sendGmail);
+router.delete("/delete/:id", deleteById);
 
-// router.get("/abc", runTime);
+router.get("/name/:name", getByName);
 
 module.exports = router;

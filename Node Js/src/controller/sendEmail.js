@@ -1,12 +1,11 @@
 const nodemailer = require("nodemailer");
 
 const sendGmail = async (email) => {
-  console.log("=>>>>", email);
-
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    // host: "smtp.gmail.com",
+    // port: 587,
+    // secure: false,
+    service: "gmail",
     auth: {
       user: "ruyanoriconer@gmail.com",
       pass: "xdsx givq cbek meri",
@@ -19,7 +18,7 @@ const sendGmail = async (email) => {
       to: `${email}`,
       subject: "Hello ✔",
       text: "Hello world?",
-      html: "<b>Hello world?</b>",
+      html: "<b style='color:red'>Hello world?</b>",
     });
 
     console.log("Message sent: %s", info.messageId);

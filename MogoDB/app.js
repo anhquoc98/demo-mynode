@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const productRouter = require("./controllers/ProductRouter");
-const mongoose = require("mongoose");
 
 const app = express();
 const port = 8080;
@@ -10,6 +9,8 @@ const port = 8080;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
+
+const mongoose = require("mongoose");
 
 mongoose
   .connect("mongodb://127.0.0.1:27017/demo")
